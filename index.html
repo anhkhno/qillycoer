@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>qillycoer masterlist</title>
+  <meta name="description" content="Track your qillycoer orders with your Telegram username.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎀</text></svg>">
+</head>
+<body>
+  <main class="page">
+
+    <header class="brand">
+      <span class="brand-mark" aria-hidden="true">♡</span>
+      <span class="brand-name">qillycoer masterlist</span>
+    </header>
+
+    <!-- 1. Announcement (text is edited in script.js → CONFIG.ANNOUNCEMENT) -->
+    <section class="note" id="announcement" aria-label="Announcements"></section>
+
+    <!-- 2. Search -->
+    <section class="finder" aria-labelledby="finder-title">
+      <h2 id="finder-title">Track your orders</h2>
+      <p class="finder-hint">Type your Telegram username to see where each item is.</p>
+
+      <form id="search-form" role="search" autocomplete="off">
+        <label for="username" class="sr-only">Telegram username</label>
+        <div class="field">
+          <span class="at" aria-hidden="true">@</span>
+          <input id="username" name="username" type="text" inputmode="text"
+                 autocapitalize="none" autocorrect="off" spellcheck="false"
+                 placeholder="your_username" required>
+          <button type="submit" class="go">Track orders</button>
+        </div>
+      </form>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- 3. Dashboard + orders -->
+    <section id="results" class="results" aria-labelledby="results-title" hidden>
+      <h2 id="results-title"></h2>
+      <div class="dashboard" id="dashboard"></div>
+      <p class="showing" id="showing" aria-live="polite"></p>
+      <ul class="orders" id="orders"></ul>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <noscript><p class="message">This page needs JavaScript to look up your orders.</p></noscript>
+  <script src="script.js"></script>
+</body>
+</html>
